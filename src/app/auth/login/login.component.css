@@ -1,0 +1,39 @@
+.first-img {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.second-img {
+    width: 25%;
+}
+
+
+.dot-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.para {
+    font-size: 13.5px !important;
+}
+
+.nxt-btn {
+    border: 1px solid #A21C3C;
+    color: #A21C3C;
+}
+
+.nxt-btn:hover {
+    background-color: #A21C3C;
+    color: #fff;
+}
