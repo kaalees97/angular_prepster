@@ -16,4 +16,10 @@ export class AuthService {
   user_register(formdata:FormData):Observable<boolean>{
     return this.http.post<boolean>(this.apiUrl + 'user_register',formdata);
   } 
+
+  //Login page
+
+  user_login(formdata:FormData):Observable<boolean>{
+    return this.http.post<boolean>(this.apiUrl + 'user_login',formdata);
+  } 
 }
