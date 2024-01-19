@@ -179,6 +179,6 @@ export class RegisterComponent {
     }
   }
 
-// register section end
+  // register section end
 
 }
