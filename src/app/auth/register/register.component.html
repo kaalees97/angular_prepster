@@ -92,7 +92,13 @@
                                 
                                 <label for="inputPassword5" class="form-label ">Create Password</label>
                                 <div class="input-group mb-3">
-                                    <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && r['password'].errors }">
+                                    <input type="{{ showPassword ? 'text' : 'password' }}" placeholder="Enter Password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && r['password'].errors }">
+                                  
+                              
+                                    <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
+                                        {{ showPassword ? 'Hide' : 'Show' }}
+                                    </button>
+                                  
 
                                     <div *ngIf="r['password'].errors?.['required']" class="invalid-feedback">Password field is required</div>
 

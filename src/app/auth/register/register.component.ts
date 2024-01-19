@@ -38,6 +38,14 @@ export class RegisterComponent {
   // Submit
   submitted:boolean=false;
 
+  // Show password
+  showPassword = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
