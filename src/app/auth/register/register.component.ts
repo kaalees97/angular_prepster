@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidationErrors  } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 //Auth list
@@ -89,9 +89,27 @@ export class RegisterComponent {
     // email
     this.register_form.get('email').setValidators([Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]);
     this.register_form.get('email').updateValueAndValidity();
+
+    // Add a custom validator function for password length
+
+    const customPasswordValidator = (control: AbstractControl): ValidationErrors | null => {
+      const password = control.value;
+
+      // Check for a minimum length of 6 characters
+      if (password && password.length < 6) {
+        return { minLength: true, message: 'Password must be at least 6 characters long' };
+      }
+
+      // Check if the password is a 3-digit number
+      if (/^\d{3}$/.test(password)) {
+        return { disallowedDigits: true, message: 'Password cannot be a 3-digit number' };
+      }
+
+      return null;
+    };
     
     // password
-    this.register_form.get('password').setValidators([Validators.required]);
+    this.register_form.get('password').setValidators([Validators.required,customPasswordValidator]);
     this.register_form.get('password').updateValueAndValidity();
     
 

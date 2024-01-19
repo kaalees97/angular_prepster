@@ -92,9 +92,13 @@
                                 
                                 <label for="inputPassword5" class="form-label ">Create Password</label>
                                 <div class="input-group mb-3">
-                                    <input type="password" id="inputPassword5" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && r['password'].errors }">
+                                    <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && r['password'].errors }">
 
                                     <div *ngIf="r['password'].errors?.['required']" class="invalid-feedback">Password field is required</div>
+
+                                    <div *ngIf="register_form.get('password').errors?.minLength" class="invalid-feedback">Password must be at least 6 characters long</div>
+
+                                    <div *ngIf="register_form.get('password').errors?.disallowedDigits" class="invalid-feedback">Password cannot be a 3-digit number</div>
                                 </div>
     
                                 <button type="submit" class="btn fw-semibold nxt-btn mt-4">Register Now</button>
