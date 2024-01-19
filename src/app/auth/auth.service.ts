@@ -11,7 +11,7 @@ export class AuthService {
   private apiUrl=environment.apiUrl;
   constructor(private http: HttpClient) { }
 
-  //login authentication
+  //Register page
 
   user_register(formdata:FormData):Observable<boolean>{
     return this.http.post<boolean>(this.apiUrl + 'user_register',formdata);
