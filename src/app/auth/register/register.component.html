@@ -59,37 +59,52 @@
                             <span class="fw-bold fs-6" style="color: #A21C3C;">We are happy you stopped by! <br>
                                 School wear made, so good!</span>
                         </div>
-                        <div class="card px-4 shadow  my-3 rounded">
-                            <!-- <div class="py-3"> -->
+                        <form [formGroup]="register_form" (ngSubmit)="register_form_submit()"> 
+                            <div class="card px-4 shadow  my-3 rounded">
+                                <!-- <div class="py-3"> -->
+    
+                                <label for="name" class="form-label" style="margin-top: 1em;">Name</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" id="name" class="form-control" aria-describedby="Username" placeholder="Enter Name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && r['name'].errors }">
 
-                            <label for="name" class="form-label" style="margin-top: 1em;">Name</label>
-                            <div class="input-group mb-3">
-                                <input type="text" id="name" class="form-control" aria-describedby="Username" placeholder="Enter Name">
-                            </div>
+                                    <div *ngIf="r['name'].errors?.['required']" class="invalid-feedback">Name is required</div>
+                                </div>
+    
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group mb-3">
+                                    <input type="email" id="email" class="form-control" aria-describedby="Useremail" placeholder="Enter Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && r['email'].errors }">
 
-                            <label for="email" class="form-label">Email</label>
-                            <div class="input-group mb-3">
-                                <input type="email" id="email" class="form-control" aria-describedby="Useremail" placeholder="Enter Email">
-                            </div>
+                                    <div *ngIf="r['email'].errors?.['required']" class="invalid-feedback">Email is required</div>
+                                    <div *ngIf="r['email'].errors?.['email']" class="invalid-feedback">Valid email is required</div>
+                                </div>
+    
+                                <label for="phone_number" class="form-label">Phone Number</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="phone_number">+91</span>
+                                    <input type="number" class="form-control small" placeholder="Enter Phone Number" formControlName="mobile_number" [ngClass]="{ 'is-invalid': submitted && r['mobile_number'].errors }">
 
-                            <label for="phone_number" class="form-label">Phone Number</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="phone_number">+91</span>
-                                <input type="tel" class="form-control small" placeholder="Enter Phone Number" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                            
-                            <label for="inputPassword5" class="form-label ">Create Password</label>
-                            <div class="input-group mb-3">
-                                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-                            </div>
+                                    <div *ngIf="r['mobile_number'].errors?.['required']" class="invalid-feedback">Mobile number is required</div>
 
-                            <button type="button" class="btn fw-semibold nxt-btn mt-4">Register Now</button>
-                            <!-- </div> -->
-                            <!-- <p class="text-center small mt-2">Or Login</p> -->
-                            <a href="/login" class="text-decoration-none" style="color: #A21C3C;">
-                                <p class="text-center small mt-2">Or Login</p>
-                            </a>
-                        </div>
+                                    <!-- Allow the 10 digit validations mobile number -->
+
+                                    <div *ngIf="r['mobile_number'].errors?.['pattern']" class="invalid-feedback">Mobile number must be 10 digits</div>
+                                </div>
+                                
+                                <label for="inputPassword5" class="form-label ">Create Password</label>
+                                <div class="input-group mb-3">
+                                    <input type="password" id="inputPassword5" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && r['password'].errors }">
+
+                                    <div *ngIf="r['password'].errors?.['required']" class="invalid-feedback">Password field is required</div>
+                                </div>
+    
+                                <button type="submit" class="btn fw-semibold nxt-btn mt-4">Register Now</button>
+                                <!-- </div> -->
+                                <!-- <p class="text-center small mt-2">Or Login</p> -->
+                                <a href="/login" class="text-decoration-none" style="color: #A21C3C;">
+                                    <p class="text-center small mt-2">Or Login</p>
+                                </a>
+                            </div>
+                        </form>
                     </div>
                     <div class="d-flex justify-content-around px-4 text-md-center mt-4">
                         <small class=" mb-2"><a href="#" class="text-decoration-none" style="color: #A21C3C;">Terms and Conditions</a></small>
