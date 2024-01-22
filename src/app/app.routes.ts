@@ -6,10 +6,17 @@ import { PrivacyPolicyComponent } from './policy/privacy-policy/privacy-policy.c
 import { ExchangeRefundPolicyComponent } from './policy/exchange-refund-policy/exchange-refund-policy.component';
 
 export const routes: Routes = [
+
+
     {
-        path:'login',
+        path:'',
         component:LoginComponent
     },
+
+    // {
+    //     path:'login',
+    //     component:LoginComponent
+    // },
 
     {
         path:'register',
