@@ -91,10 +91,10 @@ export class LoginComponent {
             icon: "success",
           }).then((result) => {
             if (result.isConfirmed) {
-              this.router.navigateByUrl('/admin/dashboard');
+              this.router.navigateByUrl('/admin/index');
             }
             else {
-              this.router.navigateByUrl('/admin/dashboard');
+              this.router.navigateByUrl('/admin/index');
             }
           })
         

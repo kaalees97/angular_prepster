@@ -1,0 +1,46 @@
+.nav-item {
+    margin-bottom: 10px; 
+}
+
+
+.nav-link {
+    color: #000;
+    text-decoration: none; 
+}
+    .nav-link:hover {
+    background-color: #A21C3C;
+    width: 180px;
+    color: white;
+}
+.nav-link.active {
+        background-color: #A21C3C;
+    width: 180px;
+    color: white;
+}
+.nav-link:focus {
+        background-color: #A21C3C;
+        width: 180px;
+    color: white;
+        
+}
+
+.collapse {
+    list-style: none; 
+}
+
+.collapse .nav-item {
+    margin-bottom: 0; 
+}
+
+/* Logout Css */
+
+.nxt-btn {
+    border: 1px solid #A21C3C;
+    color: #A21C3C;
+    font-size: 13px;
+}
+
+.nxt-btn:hover {
+    background-color: #A21C3C;
+    color: #fff;
+}

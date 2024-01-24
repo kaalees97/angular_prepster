@@ -5,6 +5,8 @@ import { TermsConditionsComponent } from './policy/terms-conditions/terms-condit
 import { PrivacyPolicyComponent } from './policy/privacy-policy/privacy-policy.component';
 import { ExchangeRefundPolicyComponent } from './policy/exchange-refund-policy/exchange-refund-policy.component';
 
+import { DashboardIndexComponent } from './dashboard/dashboard-index/dashboard-index.component';
+
 export const routes: Routes = [
 
 
@@ -37,6 +39,11 @@ export const routes: Routes = [
         path:'exchange-refund-policy',
         component:ExchangeRefundPolicyComponent
     },
+
+    {
+        path:'admin/index',
+        component:DashboardIndexComponent
+    }
 ];
 
 
