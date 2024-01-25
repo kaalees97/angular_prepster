@@ -7,6 +7,8 @@ import { ExchangeRefundPolicyComponent } from './policy/exchange-refund-policy/e
 
 import { DashboardIndexComponent } from './dashboard/dashboard-index/dashboard-index.component';
 
+import { UserRoleComponent } from './user/user-role/user-role.component';
+
 export const routes: Routes = [
 
 
@@ -43,7 +45,12 @@ export const routes: Routes = [
     {
         path:'admin/index',
         component:DashboardIndexComponent
-    }
+    },
+
+    {
+        path:'user/roles',
+        component:UserRoleComponent
+    },
 ];
 
 
